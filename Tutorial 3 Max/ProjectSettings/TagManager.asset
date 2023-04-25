@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - winTextObject
+  - COG
   layers:
   - Default
   - TransparentFX

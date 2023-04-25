@@ -267,7 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   vertical: 0
-  changeTime: 5
+  changeTime: 4
   smokeEffect: {fileID: 3720062997703340206}
 --- !u!1001 &338896636098904706
 PrefabInstance:

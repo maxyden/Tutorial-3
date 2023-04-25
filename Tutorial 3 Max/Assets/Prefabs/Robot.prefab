@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   vertical: 0
-  changeTime: 3
+  changeTime: 5
   smokeEffect: {fileID: 459741610834595081}
 --- !u!95 &190351685289638636
 Animator:
@@ -290,11 +290,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4933943913286320575, guid: ca8ec25805b966449bf944960f671cfb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.02
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4933943913286320575, guid: ca8ec25805b966449bf944960f671cfb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.65
+      value: 0.82
       objectReference: {fileID: 0}
     - target: {fileID: 4933943913286320575, guid: ca8ec25805b966449bf944960f671cfb, type: 3}
       propertyPath: m_LocalPosition.z

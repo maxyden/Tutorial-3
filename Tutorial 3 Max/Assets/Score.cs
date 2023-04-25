@@ -5,26 +5,30 @@ using TMPro;
 using UnityEngine.SceneManagement;
 
 
+
 public class Score : MonoBehaviour
 
 {
     public TextMeshProUGUI Fixed; 
     public int Fix; 
+    public static int level;
     public GameObject winTextObject;
 
-    public GameObject Backgroundmusic;
-    AudioSource audioSource;
-    public AudioClip Winmusic;
+    public GameObject SecTextObject;
+
+     public GameObject backgroundmusic;
+
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-
         Fix = 0;
 
         SetFixed();
 
         winTextObject.SetActive(false);
+
+        SecTextObject.SetActive(false);
+
 
     }
 
@@ -32,19 +36,32 @@ public class Score : MonoBehaviour
     {
         Fix = Fix + 1;
 
-        Fixed.text = "Fixed Robots: " + Fix.ToString() + "/5";
+        Fixed.text = "Fixed Robots: " + Fix.ToString() + "/5" ;
 
-        if(Fix >= 5){  
+        if(level >= 2 && Fix >= 5 ){  
            winTextObject.SetActive(true);
 
-           Backgroundmusic.SetActive(false);
+           FindObjectOfType<RubyController>().WinS();
 
-           
+
         }
+
+        if (level <= 2 && Fix >= 5)
+        {
+            SecTextObject.SetActive(true);
+        }
+
+        if(Fix >= 4){  
+            
+            
+
+            level = level + 1;
+
+
+        } 
     }
 
      void SetFixed()
-
 	{
 		Fixed.text = "Fixed Robots: " + Fix.ToString() + "/5" ;
     }
@@ -56,14 +73,29 @@ public class Score : MonoBehaviour
 
         {
 
-            if (Fix >= 5)
+            if (level >= 2 && Fix >= 5) 
 
             {
-
-              SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // this loads the currently active scene
+             
+              SceneManager.LoadScene("tutorial 3"); // this loads the currently active scene
 
             }
 
         }
     }
+
+    public void Stage2()
+    {
+        if(Fix >= 5){  
+            
+            SceneManager.LoadScene("Scene2");
+
+            
+
+
+        } 
+    }
+
+    
+
 }
